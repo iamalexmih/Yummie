@@ -10,24 +10,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="Yumie" customModuleProvider="target">
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCollectionViewCell" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="Yumie" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="150" height="56"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="150" height="56"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJ0-KK-uzw">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJ0-KK-uzw" customClass="CardView" customModule="Yumie" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="56"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2zv-03-DoX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2zv-03-DoX">
                                 <rect key="frame" x="8" y="8" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2EU-mI-59M"/>
                                     <constraint firstAttribute="width" constant="40" id="I6o-3N-upG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="UJi-Zu-Fpa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="g0c-gf-2JR"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5c-7M-C1Z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5c-7M-C1Z">
                                 <rect key="frame" x="56" y="20" width="86" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -36,29 +43,30 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2zv-03-DoX" firstAttribute="leading" secondItem="rJ0-KK-uzw" secondAttribute="leading" constant="8" id="1VM-wk-bzr"/>
-                            <constraint firstAttribute="height" constant="56" id="6aa-HY-Y2p"/>
-                            <constraint firstAttribute="bottom" secondItem="2zv-03-DoX" secondAttribute="bottom" constant="8" id="7IV-mK-Zfa"/>
-                            <constraint firstAttribute="trailing" secondItem="v5c-7M-C1Z" secondAttribute="trailing" constant="8" id="Ecd-5V-u2g"/>
-                            <constraint firstItem="2zv-03-DoX" firstAttribute="top" secondItem="rJ0-KK-uzw" secondAttribute="top" constant="8" id="GOq-wu-jvp"/>
-                            <constraint firstItem="v5c-7M-C1Z" firstAttribute="leading" secondItem="2zv-03-DoX" secondAttribute="trailing" constant="8" id="NxU-cA-Pj0"/>
-                            <constraint firstItem="v5c-7M-C1Z" firstAttribute="centerY" secondItem="rJ0-KK-uzw" secondAttribute="centerY" id="ovQ-Kk-zqE"/>
-                            <constraint firstAttribute="width" constant="150" id="pnu-49-Hgq"/>
+                            <constraint firstAttribute="trailing" secondItem="v5c-7M-C1Z" secondAttribute="trailing" constant="8" id="0nJ-Wu-eCY"/>
+                            <constraint firstItem="v5c-7M-C1Z" firstAttribute="centerY" secondItem="rJ0-KK-uzw" secondAttribute="centerY" id="ATa-tb-wT9"/>
+                            <constraint firstItem="v5c-7M-C1Z" firstAttribute="leading" secondItem="2zv-03-DoX" secondAttribute="trailing" constant="8" id="Aua-cf-5wp"/>
+                            <constraint firstAttribute="width" constant="150" id="FhG-Wu-biT"/>
+                            <constraint firstItem="2zv-03-DoX" firstAttribute="leading" secondItem="rJ0-KK-uzw" secondAttribute="leading" constant="8" id="c4k-cI-pyJ"/>
+                            <constraint firstAttribute="height" constant="56" id="dJa-F8-YYB"/>
+                            <constraint firstItem="2zv-03-DoX" firstAttribute="top" secondItem="rJ0-KK-uzw" secondAttribute="top" constant="8" id="wHw-J7-3PU"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="rJ0-KK-uzw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AdO-Qj-JyT"/>
-                <constraint firstItem="rJ0-KK-uzw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dyr-V3-fNG"/>
+                <constraint firstAttribute="trailing" secondItem="rJ0-KK-uzw" secondAttribute="trailing" id="9It-K0-uT0"/>
+                <constraint firstAttribute="bottom" secondItem="rJ0-KK-uzw" secondAttribute="bottom" id="DCU-1V-AY4"/>
+                <constraint firstItem="rJ0-KK-uzw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="PTU-a2-N1k"/>
+                <constraint firstItem="rJ0-KK-uzw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qXQ-Za-ndi"/>
             </constraints>
             <size key="customSize" width="227" height="80"/>
             <connections>
                 <outlet property="categoryImageView" destination="2zv-03-DoX" id="8jL-PX-DUa"/>
                 <outlet property="categoryTitleLbl" destination="v5c-7M-C1Z" id="J17-LU-085"/>
             </connections>
-            <point key="canvasLocation" x="161" y="58"/>
+            <point key="canvasLocation" x="160.86956521739131" y="57.589285714285708"/>
         </collectionViewCell>
     </objects>
     <resources>
