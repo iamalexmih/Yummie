@@ -1,21 +1,24 @@
 import UIKit
 import Kingfisher
 
-class DishLandscapeCollectionViewCell: UICollectionViewCell {
+class DishListTableViewCell: UITableViewCell {
 
-    static let identifier = String(describing: DishLandscapeCollectionViewCell.self)
-    
-    
+    static let identifier = String(describing: DishListTableViewCell.self)
     
     @IBOutlet weak var dishImageView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
-    @IBOutlet weak var caloriesLbl: UILabel!
     
     func setup(dish: Dish) {
         dishImageView.kf.setImage(with: dish.image?.asUrl)
         titleLbl.text = dish.name
         descriptionLbl.text = dish.description
-        caloriesLbl.text = dish.formattedCalories
+    }
+    
+    
+    func setup(order: Order) {
+        dishImageView.kf.setImage(with: order.dish?.image?.asUrl)
+        titleLbl.text = order.dish?.name
+        descriptionLbl.text = order.nameСustomer
     }
 }
